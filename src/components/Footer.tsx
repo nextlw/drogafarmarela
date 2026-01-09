@@ -10,8 +10,8 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Facebook, href: 'https://www.facebook.com/drogafarmamarilia', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/droga_farma_de_marilia/', label: 'Instagram' },
 ];
 
 export const Footer = () => {
@@ -40,10 +40,12 @@ export const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-background/10 hover:bg-primary flex items-center justify-center transition-colors flex-shrink-0"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <social.icon className="w-4 h-4  sm:w-5 sm:h-5" />
                 </a>
               ))}
             </div>
