@@ -13,7 +13,7 @@ const highlights = [
 
 export const About = () => {
   return (
-    <section id="sobre" className="section-padding">
+    <section id="sobre" className="section-padding overflow-x-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
@@ -37,15 +37,15 @@ export const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="absolute -bottom-8 -right-8 bg-card p-6 rounded-2xl shadow-card-hover"
+              className="absolute bottom-4 right-4 lg:-bottom-8 lg:-right-8 bg-card p-4 lg:p-6 rounded-2xl shadow-card-hover max-w-[calc(100%-2rem)] lg:max-w-none"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center">
-                  <Award className="w-7 h-7 text-primary-foreground" />
+              <div className="flex items-center gap-2 lg:gap-3">
+                <div className="w-10 h-10 lg:w-14 lg:h-14 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Award className="w-5 h-5 lg:w-7 lg:h-7 text-primary-foreground" />
                 </div>
-                <div>
-                  <p className="font-display text-3xl font-bold text-primary">+47</p>
-                  <p className="text-muted-foreground">Anos de experiência</p>
+                <div className="min-w-0">
+                  <p className="font-display text-2xl lg:text-3xl font-bold text-primary">+47</p>
+                  <p className="text-xs lg:text-sm text-muted-foreground whitespace-nowrap">Anos de experiência</p>
                 </div>
               </div>
             </motion.div>

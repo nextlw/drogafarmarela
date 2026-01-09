@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, Clock, Truck, ShieldCheck } from 'lucide-react';
+import { Clock, Truck, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { WhatsAppIcon } from '@/components/WhatsAppIcon';
 import frenteLoja from '@/assets/frente-loja.webp';
 
 const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=5514991864546&text=Ol%C3%A1%2C+cheguei+atrav%C3%A9s+do+site+e+gostaria+de+fazer+um+pedido.&type=phone_number&app_absent=0";
@@ -58,7 +59,7 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <Button className="btn-whatsapp text-lg px-8 py-6 group">
-                  <MessageCircle className="mr-2 w-5 h-5" />
+                  <WhatsAppIcon className="mr-2 w-5 h-5" />
                   Peça pelo WhatsApp
                 </Button>
               </a>
