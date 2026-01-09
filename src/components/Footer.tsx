@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Phone, MapPin } from 'lucide-react';
+import logoFarmarela from '@/assets/logo-farmarela.png';
 
 const quickLinks = [
   { name: 'Início', href: '#inicio' },
   { name: 'Sobre', href: '#sobre' },
   { name: 'Serviços', href: '#servicos' },
-  { name: 'Produtos', href: '#produtos' },
   { name: 'Contato', href: '#contato' },
 ];
 
@@ -26,17 +26,13 @@ export const Footer = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-xl">T</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-xl">Farmácia</span>
-                <span className="text-primary font-display font-semibold text-lg -mt-1">Todinha</span>
-              </div>
-            </div>
+            <img 
+              src={logoFarmarela} 
+              alt="Drogarias Farmarela" 
+              className="h-12 w-auto brightness-0 invert"
+            />
             <p className="text-background/70 leading-relaxed">
-              Há mais de 20 anos cuidando da saúde e bem-estar da sua família 
+              Há mais de 30 anos cuidando da saúde e bem-estar da sua família 
               com qualidade e carinho.
             </p>
             <div className="flex gap-3">
@@ -75,31 +71,40 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact */}
+          {/* Location */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="font-display font-semibold text-lg mb-6">Contato</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
+            <h3 className="font-display font-semibold text-lg mb-6">Localização</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-background/70">
-                  Rua da Farmácia, 123<br />
-                  Centro - CEP: 00000-000
+                  Rua Romeu Massinatori, 140<br />
+                  Hípica Paulista, Marília - SP<br />
+                  CEP: 17522-780
                 </span>
-              </li>
-              <li className="flex items-center gap-3">
+              </div>
+              <a 
+                href="tel:+5514991864546" 
+                className="flex items-center gap-3 text-background/70 hover:text-primary transition-colors"
+              >
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-background/70">(00) 0000-0000</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-background/70">contato@farmaciatodinha.com.br</span>
-              </li>
-            </ul>
+                <span>(14) 99186-4546</span>
+              </a>
+              
+              {/* Ligar Button */}
+              <a
+                href="tel:+5514991864546"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-xl font-medium hover:bg-primary/90 transition-colors mt-2"
+              >
+                <Phone className="w-4 h-4" />
+                Ligar Agora
+              </a>
+            </div>
           </motion.div>
 
           {/* Hours */}
@@ -113,33 +118,33 @@ export const Footer = () => {
             <ul className="space-y-3 text-background/70">
               <li className="flex justify-between">
                 <span>Segunda a Sexta</span>
-                <span>7h - 22h</span>
+                <span>08h - 19h</span>
               </li>
               <li className="flex justify-between">
                 <span>Sábado</span>
-                <span>7h - 22h</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Domingo</span>
-                <span>8h - 20h</span>
+                <span>08h - 18h</span>
               </li>
             </ul>
             <div className="mt-6 p-4 bg-primary/20 rounded-xl">
               <p className="text-sm text-primary font-medium">
-                🚀 Delivery até 22h
+                🚀 Delivery disponível!
               </p>
             </div>
           </motion.div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-background/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-background/50 text-sm">
-            © 2024 Farmácia Todinha. Todos os direitos reservados.
-          </p>
-          <p className="text-background/50 text-sm">
-            Desenvolvido com ❤️
-          </p>
+        <div className="border-t border-background/10 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-background/50 text-sm text-center md:text-left">
+              <p>© Copyright 2025. Todos os direitos reservados.</p>
+              <p className="mt-1">Razão Social: Droga Farma de Marília LTDA</p>
+              <p>CNPJ: 71.641.161/0001-02</p>
+            </div>
+            <p className="text-background/50 text-sm">
+              Desenvolvido com ❤️
+            </p>
+          </div>
         </div>
       </div>
     </footer>

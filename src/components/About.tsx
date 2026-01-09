@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
-import pharmacistImage from '@/assets/pharmacist.jpg';
+import { CheckCircle2, Award } from 'lucide-react';
+import loja3 from '@/assets/loja-3.webp';
 
 const highlights = [
-  'Equipe de farmacêuticos especializados',
+  'Equipe de farmacêuticos experientes',
   'Atendimento humanizado e personalizado',
   'Medicamentos com procedência garantida',
   'Preços justos e condições especiais',
@@ -26,8 +26,8 @@ export const About = () => {
           >
             <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-2xl" />
             <img
-              src={pharmacistImage}
-              alt="Nossa equipe"
+              src={loja3}
+              alt="Interior da Drogarias Farmarela"
               className="relative w-full rounded-3xl shadow-large object-cover aspect-[3/4]"
             />
             
@@ -39,9 +39,14 @@ export const About = () => {
               transition={{ delay: 0.4 }}
               className="absolute -bottom-8 -right-8 bg-card p-6 rounded-2xl shadow-card-hover"
             >
-              <div className="text-center">
-                <p className="font-display text-4xl font-bold text-primary">+15.000</p>
-                <p className="text-muted-foreground mt-1">Clientes atendidos</p>
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center">
+                  <Award className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <div>
+                  <p className="font-display text-3xl font-bold text-primary">+47</p>
+                  <p className="text-muted-foreground">Anos de experiência</p>
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -59,14 +64,20 @@ export const About = () => {
                 Sobre Nós
               </span>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Mais de 20 anos cuidando da sua{' '}
+                Desde 1993 cuidando da sua{' '}
                 <span className="text-gradient">saúde</span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                A Farmácia Todinha nasceu do sonho de oferecer um atendimento 
-                farmacêutico de qualidade, com preços justos e um ambiente acolhedor. 
-                Desde então, nos tornamos referência na região, sempre priorizando 
-                o bem-estar dos nossos clientes.
+            </div>
+
+            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+              <p>
+                A Droga Farma de Marília, fundada em 01/06/1993, é uma farmácia de varejo 
+                especializada em produtos farmacêuticos. Localizada na cidade de Marília, 
+                São Paulo, oferecemos um atendimento de qualidade e produtos de confiança.
+              </p>
+              <p className="bg-secondary/50 p-4 rounded-xl border-l-4 border-primary">
+                <strong className="text-foreground">Farmácia com ambiente familiar</strong> contando 
+                com farmacêutico com mais de 47 anos de experiência no mercado.
               </p>
             </div>
 
@@ -100,8 +111,8 @@ export const About = () => {
                 ))}
               </div>
               <div>
-                <p className="font-semibold text-foreground">+1.000 avaliações 5 estrelas</p>
-                <p className="text-sm text-muted-foreground">Clientes satisfeitos</p>
+                <p className="font-semibold text-foreground">+1.000 clientes satisfeitos</p>
+                <p className="text-sm text-muted-foreground">na região de Marília</p>
               </div>
             </div>
           </motion.div>

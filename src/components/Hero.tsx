@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, Clock, Truck } from 'lucide-react';
+import { MessageCircle, Clock, Truck, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-pharmacy.jpg';
+import frenteLoja from '@/assets/frente-loja.webp';
+
+const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=5514991864546&text=Ol%C3%A1%2C+cheguei+atrav%C3%A9s+do+site+e+gostaria+de+fazer+um+pedido.&type=phone_number&app_absent=0";
 
 const features = [
   { icon: ShieldCheck, text: 'Produtos Originais' },
-  { icon: Clock, text: 'Atendimento 7 dias' },
-  { icon: Truck, text: 'Entrega Rápida' },
+  { icon: Clock, text: 'Entrega Expressa' },
+  { icon: Truck, text: 'Delivery Rápido' },
 ];
 
 export const Hero = () => {
@@ -30,28 +32,36 @@ export const Hero = () => {
             <div className="inline-flex items-center gap-2 bg-secondary px-4 py-2 rounded-full">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-secondary-foreground">
-                Sua saúde em primeiro lugar
+                Delivery rápido em toda a região
               </span>
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Cuidando de você com{' '}
-              <span className="text-gradient">carinho e qualidade</span>
+              Seu remédio{' '}
+              <span className="text-gradient">sem sair de casa</span>
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-lg">
-              Na Farmácia Todinha você encontra os melhores medicamentos, 
-              produtos de saúde e beleza com atendimento especializado e preços justos.
+              Atendemos via WhatsApp com entrega expressa em toda a região.
             </p>
 
+            {/* Horário de Funcionamento */}
+            <div className="bg-secondary/60 p-4 rounded-xl border border-primary/20">
+              <div className="flex items-center gap-2 mb-2">
+                <Clock className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-foreground">Horário de Funcionamento</span>
+              </div>
+              <p className="text-muted-foreground">Segunda à sexta: 08:00h às 19:00h</p>
+              <p className="text-muted-foreground">Sábado: 08:00h às 18:00h</p>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-gradient text-lg px-8 py-6 group">
-                Ver Produtos
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button variant="outline" className="text-lg px-8 py-6 border-2">
-                Saiba Mais
-              </Button>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <Button className="btn-whatsapp text-lg px-8 py-6 group">
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Peça pelo WhatsApp
+                </Button>
+              </a>
             </div>
 
             {/* Features */}
@@ -83,8 +93,8 @@ export const Hero = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-primary/5 rounded-3xl blur-2xl" />
               <img
-                src={heroImage}
-                alt="Farmácia Todinha"
+                src={frenteLoja}
+                alt="Drogarias Farmarela - Fachada da Loja"
                 className="relative w-full rounded-3xl shadow-large object-cover aspect-[4/3]"
               />
               
@@ -97,11 +107,11 @@ export const Hero = () => {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-primary-foreground" />
+                    <Truck className="w-6 h-6 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="font-display font-bold text-foreground">+20 anos</p>
-                    <p className="text-sm text-muted-foreground">de confiança</p>
+                    <p className="font-display font-bold text-foreground">Delivery Rápido</p>
+                    <p className="text-sm text-muted-foreground">Entrega expressa</p>
                   </div>
                 </div>
               </motion.div>
