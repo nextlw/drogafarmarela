@@ -147,7 +147,7 @@ export const Footer = () => {
               <p className="break-words">CNPJ: 71.641.161/0001-02</p>
             </div>
             <p className="text-background/50 text-xs sm:text-sm whitespace-nowrap">
-              Desenvolvido com NexCode
+              Desenvolvido por NexCode - 2025
             </p>
           </div>
         </div>
