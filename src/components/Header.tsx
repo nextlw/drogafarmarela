@@ -68,7 +68,7 @@ export const Header = () => {
               <img 
                 src={logoFarmarela} 
                 alt="Drogarias Farmarela" 
-                className="h-12 md:h-14 w-auto"
+                className="h-12 md:h-14 py-2 w-auto"
               />
             </motion.a>
 

@@ -142,7 +142,7 @@ export const Footer = () => {
               <p>CNPJ: 71.641.161/0001-02</p>
             </div>
             <p className="text-background/50 text-sm">
-              Desenvolvido com ❤️
+              Desenvolvido com NexCode
             </p>
           </div>
         </div>
