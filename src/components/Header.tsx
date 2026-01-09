@@ -2,14 +2,16 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, MapPin, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoFarmarela from '@/assets/logo-farmarela.png';
 
 const navLinks = [
   { name: 'Início', href: '#inicio' },
   { name: 'Sobre', href: '#sobre' },
   { name: 'Serviços', href: '#servicos' },
-  { name: 'Produtos', href: '#produtos' },
   { name: 'Contato', href: '#contato' },
 ];
+
+const WHATSAPP_URL = "https://api.whatsapp.com/send/?phone=5514991864546&text=Ol%C3%A1%2C+cheguei+atrav%C3%A9s+do+site+e+gostaria+de+fazer+um+pedido.&type=phone_number&app_absent=0";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,18 +31,18 @@ export const Header = () => {
       <div className="bg-primary text-primary-foreground py-2 hidden md:block">
         <div className="container-custom flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
+            <a href="tel:+5514991864546" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Phone className="w-4 h-4" />
-              <span>(00) 0000-0000</span>
-            </div>
+              <span>(14) 99186-4546</span>
+            </a>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span>Rua da Farmácia, 123 - Centro</span>
+              <span>Rua Romeu Massinatori, 140 - Marília/SP</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4" />
-            <span>Seg a Sáb: 7h às 22h | Dom: 8h às 20h</span>
+            <span>Seg a Sex: 08h às 19h | Sáb: 08h às 18h</span>
           </div>
         </div>
       </div>
@@ -60,16 +62,14 @@ export const Header = () => {
             {/* Logo */}
             <motion.a 
               href="#inicio"
-              className="flex items-center gap-3"
+              className="flex items-center"
               whileHover={{ scale: 1.02 }}
             >
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-xl">T</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-xl text-foreground">Farmácia</span>
-                <span className="text-primary font-display font-semibold text-lg -mt-1">Todinha</span>
-              </div>
+              <img 
+                src={logoFarmarela} 
+                alt="Drogarias Farmarela" 
+                className="h-12 md:h-14 w-auto"
+              />
             </motion.a>
 
             {/* Desktop Navigation */}
@@ -88,9 +88,11 @@ export const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center gap-4">
-              <Button className="btn-gradient">
-                Fale Conosco
-              </Button>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <Button className="btn-whatsapp">
+                  Peça pelo WhatsApp
+                </Button>
+              </a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -123,9 +125,11 @@ export const Header = () => {
                     {link.name}
                   </a>
                 ))}
-                <Button className="btn-gradient mt-4">
-                  Fale Conosco
-                </Button>
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  <Button className="btn-whatsapp mt-4 w-full">
+                    Peça pelo WhatsApp
+                  </Button>
+                </a>
               </div>
             </motion.div>
           )}
